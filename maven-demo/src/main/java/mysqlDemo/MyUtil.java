@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.Writer;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -32,8 +31,8 @@ public class MyUtil {
         
         try {
             //BufferedReader bufferedReader = new BufferedReader(new FileReader("maven-demo/db.properties"));
-            //BufferedReader bufferedReader = new BufferedReader(new FileReader("/Users/lanyi/java/project/demo/maven-demo/db.properties"));
-            BufferedReader bufferedReader = new BufferedReader(new FileReader("/root/mysqltest/script/insert/java/db.properties"));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("./db.properties"));
+            //BufferedReader bufferedReader = new BufferedReader(new FileReader("/root/mysql/script/insert/java/db.properties"));
             properties.load(bufferedReader);
         } catch (IOException e) {
             e.printStackTrace();

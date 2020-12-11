@@ -53,16 +53,16 @@ public final class App {
                 System.out.println(threads[i]+"线程,"+"次插入数为"+loadNums[j]+"的原生JDBC测试完成；");                          
             }
         }
-        for(int i=0;i<threads.length;i++){
-            for(int j=0;j<loadNums.length;j++){   
-                //不分库
-                SqlUtil.TruncateTable(2); 
-                SqlUtil.ShardingMultiThreadsInsertOneDatabase(threads[i],loadNums[j]);
-                SqlUtil.OneSelect();
-                SqlUtil.OneUndate();
-                System.out.println(threads[i]+"线程,"+"次插入数为"+loadNums[j]+"的ShardingJDBC不分片测试完成；");                             
-            }
-        }
+        // for(int i=0;i<threads.length;i++){
+        //     for(int j=0;j<loadNums.length;j++){   
+        //         //不分库
+        //         SqlUtil.TruncateTable(2); 
+        //         SqlUtil.ShardingMultiThreadsInsertOneDatabase(threads[i],loadNums[j]);
+        //         SqlUtil.OneSelect();
+        //         SqlUtil.OneUndate();
+        //         System.out.println(threads[i]+"线程,"+"次插入数为"+loadNums[j]+"的ShardingJDBC不分片测试完成；");                             
+        //     }
+        // }
         for(int i=0;i<threads.length;i++){
             for(int j=0;j<loadNums.length;j++){   
                 SqlUtil.TruncateTable(3); 

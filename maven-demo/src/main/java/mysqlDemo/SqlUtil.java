@@ -290,11 +290,11 @@ public class SqlUtil {
             }
             ps.close();
             conn.close();   
-            long spendtime = (System.currentTimeMillis() - start);
-            String log1 = "原生jdbc查询花费时间: " + spendtime+"ms"; 
+            long spendtime = (System.currentTimeMillis() - start)/1000;
+            String log1 = "原生jdbc查询花费时间: " + spendtime+"s"; 
             System.out.println(log1);
             //LogUtil.charOutStream("thread_"+threadNum+"_loadNum_"+loadNum, log1);
-            float qps = selectData*1000/spendtime;
+            float qps = selectData/spendtime;
             String log2 = "QPS:" + qps;
             System.out.println(log2);
             //LogUtil.charOutStream("thread_"+threadNum+"_loadNum_"+loadNum, log2);
@@ -320,11 +320,11 @@ public class SqlUtil {
             ps.executeBatch();
             ps.close();
             conn.close();   
-            long spendtime = (System.currentTimeMillis() - start);
-            String log1 = "原生jdbc更新花费时间: " + spendtime+"ms"; 
+            long spendtime = (System.currentTimeMillis() - start)/1000;
+            String log1 = "原生jdbc更新花费时间: " + spendtime+"s"; 
             System.out.println(log1);
             //LogUtil.charOutStream("thread_"+threadNum+"_loadNum_"+loadNum, log1);
-            float qps = selectData*1000/spendtime;
+            float qps = selectData/spendtime;
             String log2 = "TPS:" + qps;
             System.out.println(log2);
             //LogUtil.charOutStream("thread_"+threadNum+"_loadNum_"+loadNum, log2);
@@ -408,11 +408,11 @@ public class SqlUtil {
             }
             ps.close();
             conn.close();   
-            long spendtime = (System.currentTimeMillis() - start);
-            String log1 = "Shardingjdbc双库查询花费时间: " + spendtime+"ms"; 
+            long spendtime = (System.currentTimeMillis() - start)/1000;
+            String log1 = "Shardingjdbc双库查询花费时间: " + spendtime+"s"; 
             System.out.println(log1);
             //LogUtil.charOutStream("thread_"+threadNum+"_loadNum_"+loadNum, log1);
-            float qps = selectData*1000/spendtime;
+            float qps = selectData/spendtime;
             String log2 = "QPS:" + qps;
             System.out.println(log2);
             //LogUtil.charOutStream("thread_"+threadNum+"_loadNum_"+loadNum, log2);
@@ -438,11 +438,11 @@ public class SqlUtil {
             ps.executeBatch();
             ps.close();
             conn.close();   
-            long spendtime = (System.currentTimeMillis() - start);
-            String log1 = "Shardingjdbc双库更新花费时间: " + spendtime+"ms"; 
+            long spendtime = (System.currentTimeMillis() - start)/1000;
+            String log1 = "Shardingjdbc双库更新花费时间: " + spendtime+"s"; 
             System.out.println(log1);
             //LogUtil.charOutStream("thread_"+threadNum+"_loadNum_"+loadNum, log1);
-            float qps = selectData*1000/spendtime;
+            float qps = selectData/spendtime;
             String log2 = "TPS:" + qps;
             System.out.println(log2);
             //LogUtil.charOutStream("thread_"+threadNum+"_loadNum_"+loadNum, log2);
